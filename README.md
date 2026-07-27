@@ -66,3 +66,19 @@ Para cambiarla, sustituye ese MP3 por otro archivo con exactamente el mismo nomb
 - Eliminado el texto sobre el inicio de la música.
 - Eliminada la indicación «Pulsa el sello para abrir».
 - El sello ahora llama la atención mediante un movimiento sutil, brillo y ondas concéntricas.
+
+
+## Versión 1.2
+
+- Añadida la información de Fairplay Golf & Spa Resort.
+- Botón «Cómo llegar» conectado con Google Maps.
+- Teléfonos del hotel y spa pulsables desde el móvil.
+- Correo de reservas pulsable.
+- Nueva tarjeta visual para la sección del hotel.
+
+## Versión 1.3
+- Apertura de la caja refinada con sello pulsable, brillo y profundidad.
+- Fundido suave de la música.
+- Hojas de eucalipto y flores de paniculata durante la apertura.
+- Fotografía panorámica del Fairplay Golf & Spa Resort.
+- Enlace de Google Maps corregido.

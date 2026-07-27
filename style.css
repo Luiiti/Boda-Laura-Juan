@@ -589,3 +589,284 @@ footer{
     animation:none!important;
   }
 }
+
+
+/* V1.2 · HOTEL Y UBICACIÓN */
+.hotel-section{
+  overflow:hidden;
+}
+.hotel-intro{
+  max-width:600px;
+  margin:0 auto 32px;
+  color:#5b6961;
+  font-size:1.15rem;
+}
+.hotel-card{
+  max-width:620px;
+  margin:0 auto;
+  padding:26px;
+  display:grid;
+  grid-template-columns:74px 1fr;
+  gap:20px;
+  align-items:start;
+  text-align:left;
+  border:1px solid rgba(47,86,61,.15);
+  border-radius:26px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.94),rgba(249,244,230,.88));
+  box-shadow:0 16px 42px rgba(36,65,50,.10);
+}
+.hotel-monogram{
+  width:68px;
+  height:68px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--leaf-dark);
+  background:
+    radial-gradient(circle at 35% 30%,#f7e991,#d6b43b 70%,#b98d24);
+  border:4px double rgba(255,255,255,.75);
+  font-size:2.2rem;
+  font-style:italic;
+}
+.hotel-details{
+  min-width:0;
+}
+.hotel-item{
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.hotel-label,
+.hotel-contact span{
+  display:block;
+  margin-bottom:5px;
+  color:#728078;
+  font-family:Montserrat,Arial,sans-serif;
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.hotel-item p{
+  margin:0;
+  color:var(--leaf-dark);
+  font-size:1.08rem;
+}
+.hotel-contact-grid{
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+.hotel-contact{
+  text-decoration:none;
+  color:var(--leaf-dark);
+}
+.hotel-contact strong{
+  font-size:1rem;
+  font-weight:500;
+}
+.hotel-email{
+  display:inline-block;
+  margin-top:18px;
+  color:var(--leaf-dark);
+  text-decoration-color:rgba(47,86,61,.35);
+  text-underline-offset:4px;
+  overflow-wrap:anywhere;
+}
+.hotel-actions{
+  max-width:620px;
+  margin:26px auto 0;
+  display:grid;
+  gap:12px;
+}
+.button-primary{
+  color:white;
+  background:linear-gradient(135deg,#315a41,#203e2f);
+  box-shadow:0 12px 30px rgba(32,62,47,.22);
+}
+.hotel-actions .button{
+  width:100%;
+  margin-top:0;
+}
+@media(min-width:650px){
+  .hotel-contact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .hotel-actions{
+    grid-template-columns:1.2fr 1fr 1.25fr;
+  }
+}
+@media(max-width:430px){
+  .hotel-card{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hotel-monogram{
+    margin:auto;
+  }
+}
+
+/* =========================================================
+   VERSIÓN 1.3 · APERTURA ARTESANAL + HOTEL
+   ========================================================= */
+.envelope-screen{perspective:1200px}
+.envelope{
+  transform-style:preserve-3d;
+  transition:transform 1.05s cubic-bezier(.2,.72,.18,1),box-shadow 1.05s ease,opacity .85s ease;
+}
+.envelope::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+  border-radius:inherit;
+  box-shadow:inset 0 1px rgba(255,255,255,.72),inset 0 -28px 60px rgba(30,65,55,.08);
+}
+.wax-seal{
+  z-index:8;
+  animation:sealBreath 2.8s ease-in-out infinite;
+  will-change:transform;
+  overflow:hidden;
+}
+.wax-seal::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:50%;
+  border:1px solid rgba(103,68,10,.2);
+  pointer-events:none;
+}
+.seal-glint{
+  position:absolute;
+  width:44%;height:160%;
+  top:-30%;left:-58%;
+  transform:rotate(24deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  animation:sealGlint 3.4s ease-in-out infinite 1s;
+  pointer-events:none;
+}
+.envelope-screen.seal-pressed .wax-seal{
+  animation:none;
+  transform:translate(-50%,-50%) scale(.90);
+  box-shadow:0 6px 13px rgba(90,57,8,.38),inset 0 5px 9px rgba(83,52,6,.15);
+}
+.envelope-screen.seal-pressed .gold-band{
+  filter:brightness(1.04);
+}
+.envelope-screen.opening{
+  opacity:1;
+  transform:none;
+}
+.envelope-screen.opening .envelope{
+  transform:rotateX(-9deg) translateY(-18px) scale(1.025);
+  box-shadow:0 55px 100px rgba(25,52,44,.35);
+  opacity:0;
+}
+.envelope-screen.opening .gold-band{
+  animation:bandRelease .75s cubic-bezier(.18,.8,.28,1) both;
+}
+.envelope-screen.opening .wax-seal{
+  animation:sealBreak .72s cubic-bezier(.2,.8,.25,1) both;
+}
+.opening-petals{
+  position:absolute;
+  inset:0;
+  z-index:12;
+  pointer-events:none;
+  overflow:hidden;
+}
+.opening-piece{
+  position:absolute;
+  left:var(--x);top:43%;
+  opacity:0;
+  animation-delay:var(--delay);
+}
+.opening-piece.leaf{
+  width:14px;height:30px;
+  border-radius:100% 0 100% 0;
+  background:linear-gradient(145deg,var(--leaf-soft),var(--leaf-dark));
+}
+.opening-piece.flower{
+  width:8px;height:8px;border-radius:50%;
+  background:#fff;
+  box-shadow:7px 1px 0 -1px #fff,-5px 5px 0 -1px #fff,1px 8px 0 -1px #fff;
+}
+.opening-petals.active .opening-piece{animation:petalFall 1.25s ease-in both}
+@keyframes sealBreath{
+  0%,100%{transform:translate(-50%,-50%) scale(1);box-shadow:0 14px 28px rgba(90,57,8,.33)}
+  50%{transform:translate(-50%,-50%) scale(1.045);box-shadow:0 18px 38px rgba(90,57,8,.42)}
+}
+@keyframes sealGlint{
+  0%,58%{left:-58%;opacity:0}
+  68%{opacity:.8}
+  88%,100%{left:120%;opacity:0}
+}
+@keyframes sealBreak{
+  0%{transform:translate(-50%,-50%) scale(.9) rotate(0)}
+  44%{transform:translate(-50%,-50%) scale(.96) rotate(-3deg)}
+  100%{transform:translate(-50%,-50%) scale(.35) rotate(16deg);opacity:0;filter:blur(2px)}
+}
+@keyframes bandRelease{
+  to{transform:translateY(-50%) scaleX(1.08);opacity:0}
+}
+@keyframes petalFall{
+  0%{opacity:0;transform:translate(0,0) rotate(0) scale(.7)}
+  18%{opacity:.92}
+  100%{opacity:0;transform:translate(var(--drift),280px) rotate(var(--turn)) scale(1)}
+}
+
+.hotel-photo-wrap{
+  position:relative;
+  margin:34px 0 30px;
+  min-height:420px;
+  overflow:hidden;
+  border-radius:26px;
+  box-shadow:0 24px 60px rgba(29,56,45,.22);
+  background:#d6e4dc;
+}
+.hotel-photo{
+  width:100%;height:100%;min-height:420px;
+  display:block;object-fit:cover;
+  transform:scale(1.015);
+  transition:transform 1.2s ease;
+}
+.hotel-photo-wrap::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 36%,rgba(13,35,27,.76) 100%);
+}
+.hotel-photo-wrap figcaption{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  z-index:2;
+  padding:62px 28px 26px;
+  color:#fff;
+  text-align:left;
+}
+.hotel-photo-wrap figcaption span{
+  display:block;
+  margin-bottom:6px;
+  font:600 .67rem/1.4 Montserrat,Arial,sans-serif;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  opacity:.84;
+}
+.hotel-photo-wrap figcaption strong{
+  display:block;
+  font-size:clamp(2rem,7vw,3.3rem);
+  line-height:.92;
+  font-weight:400;
+}
+.hotel-photo-wrap:hover .hotel-photo{transform:scale(1.055)}
+.hotel-card{margin-top:0}
+
+@media(max-width:620px){
+  .hotel-photo-wrap{min-height:350px;margin-left:-8px;margin-right:-8px;border-radius:22px}
+  .hotel-photo{min-height:350px}
+  .hotel-photo-wrap figcaption{padding:54px 22px 22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .wax-seal,.seal-glint{animation:none!important}
+  .envelope,.hotel-photo{transition:none!important}
+}

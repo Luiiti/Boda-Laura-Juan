@@ -30,10 +30,11 @@
           <span></span>
         </div>
         <button class="wax-seal" id="openInvitation" aria-label="Abrir invitación">
+          <span class="seal-glint" aria-hidden="true"></span>
           <span class="seal-names">Laura<br>&amp; Juan</span>
           <span class="seal-date">28 · 08 · 2027</span>
         </button>
-        
+        <div class="opening-petals" id="openingPetals" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -108,18 +109,63 @@
         </div>
       </section>
 
-      <section class="section section-cream" id="ubicacion">
+      <section class="section section-cream hotel-section" id="ubicacion">
         <div class="section-inner reveal">
-          <p class="section-kicker">Cómo llegar</p>
-          <h2>Ubicación</h2>
+          <p class="section-kicker">El lugar de la celebración</p>
+          <h2>Fairplay Golf &amp; Spa Resort</h2>
           <div class="ornament"></div>
-          <p class="lead">
-            En cuanto confirmemos el hotel, aquí encontrarás toda la información
-            necesaria para llegar cómodamente.
+
+          <p class="hotel-intro">
+            Un entorno elegante y rodeado de naturaleza donde celebraremos
+            uno de los días más especiales de nuestra vida.
           </p>
-          <a id="mapsButton" class="button button-outline" href="#" aria-disabled="true">
-            Ver en Google Maps
-          </a>
+
+          <figure class="hotel-photo-wrap">
+            <img class="hotel-photo" src="assets/Images/Hotel.jpeg" alt="Vista aérea de Fairplay Golf &amp; Spa Resort" loading="lazy" />
+            <figcaption>
+              <span>Benalup-Casas Viejas · Cádiz</span>
+              <strong>Fairplay Golf &amp; Spa Resort</strong>
+            </figcaption>
+          </figure>
+
+          <div class="hotel-card">
+            <div class="hotel-monogram" aria-hidden="true">F</div>
+
+            <div class="hotel-details">
+              <div class="hotel-item">
+                <span class="hotel-label">Dirección</span>
+                <p>Calle La Torre, 80<br>11190 Benalup-Casas Viejas, Cádiz</p>
+              </div>
+
+              <div class="hotel-contact-grid">
+                <a class="hotel-contact" href="tel:+34956424824">
+                  <span>Hotel</span>
+                  <strong>(+34) 956 424 824</strong>
+                </a>
+
+                <a class="hotel-contact" href="tel:+34671380294">
+                  <span>Spa</span>
+                  <strong>(+34) 671 380 294</strong>
+                </a>
+              </div>
+
+              <a class="hotel-email" href="mailto:reservas@fairplayresort.es">
+                reservas@fairplayresort.es
+              </a>
+            </div>
+          </div>
+
+          <div class="hotel-actions">
+            <a id="mapsButton" class="button button-primary" href="#" aria-disabled="true">
+              Cómo llegar
+            </a>
+            <a class="button button-outline" href="tel:+34956424824">
+              Llamar al hotel
+            </a>
+            <a class="button button-outline" href="mailto:reservas@fairplayresort.es">
+              Reservar alojamiento
+            </a>
+          </div>
         </div>
       </section>
 
