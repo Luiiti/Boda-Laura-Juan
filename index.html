@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b9dfe7" />
+  <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
+  <title>Laura & Juan · 28.08.2027</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+
+    <audio id="backgroundMusic" loop preload="auto">
+      <source src="assets/audio/tema-laura-juan.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-control" id="musicControl" type="button" aria-label="Pausar música" hidden>
+      <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span id="musicLabel">Música</span>
+    </button>
+
+
+    <section class="envelope-screen" id="envelopeScreen" aria-label="Portada de la invitación">
+      <div class="envelope">
+        <div class="envelope-pattern" aria-hidden="true"></div>
+        <div class="gold-band"></div>
+        <button class="wax-seal" id="openInvitation" aria-label="Abrir invitación">
+          <span class="seal-names">Laura<br>&amp; Juan</span>
+          <span class="seal-date">28 · 08 · 2027</span>
+        </button>
+        <p class="open-label">Pulsa el sello para abrir<br><small>La música comenzará suavemente</small></p>
+      </div>
+    </section>
+
+    <main id="invitation" class="invitation" aria-hidden="true">
+      <section class="hero">
+        <div class="botanical botanical-left" aria-hidden="true"></div>
+        <div class="botanical botanical-right" aria-hidden="true"></div>
+
+        <div class="hero-content reveal">
+          <p class="eyebrow">Nos casamos</p>
+          <h1>
+            <span>Laura</span>
+            <em>&amp;</em>
+            <span>Juan</span>
+          </h1>
+          <p class="hero-date">28 · 08 · 2027</p>
+          <p class="hero-intro">
+            Una celebración mediterránea, luminosa y llena de emoción.
+            Nos encantará vivirla junto a vosotros.
+          </p>
+          <a class="scroll-down" href="#historia" aria-label="Continuar">↓</a>
+        </div>
+      </section>
+
+      <section class="section section-cream" id="historia">
+        <div class="section-inner reveal">
+          <p class="section-kicker">Nuestra historia continúa</p>
+          <h2>Un día muy nuestro</h2>
+          <div class="ornament"></div>
+          <p class="lead">
+            Limones, eucalipto y paniculata serán el hilo conductor de un día pensado
+            para disfrutar, brindar, reír y crear recuerdos inolvidables con las personas
+            que más queremos.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-sky" id="detalles">
+        <div class="section-inner reveal">
+          <p class="section-kicker">Guarda la fecha</p>
+          <h2>El gran día</h2>
+          <div class="ornament"></div>
+
+          <div class="detail-grid">
+            <article class="detail-card detail-card-wide">
+              <span class="detail-icon">♡</span>
+              <h3>Sábado, 28 de agosto de 2027</h3>
+              <p>Será un día para recordar</p>
+            </article>
+
+            <article class="detail-card">
+              <span class="detail-icon">◷</span>
+              <h3>Ceremonia</h3>
+              <p>Hora pendiente de confirmación</p>
+              <span class="pending">Próximamente</span>
+            </article>
+
+            <article class="detail-card">
+              <span class="detail-icon">⌖</span>
+              <h3>Celebración</h3>
+              <p>Hotel pendiente de confirmación</p>
+              <span class="pending">Próximamente</span>
+            </article>
+          </div>
+
+          <div class="countdown" aria-label="Cuenta atrás para la boda">
+            <div><strong id="days">—</strong><span>Días</span></div>
+            <div><strong id="hours">—</strong><span>Horas</span></div>
+            <div><strong id="minutes">—</strong><span>Min.</span></div>
+            <div><strong id="seconds">—</strong><span>Seg.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-cream" id="ubicacion">
+        <div class="section-inner reveal">
+          <p class="section-kicker">Cómo llegar</p>
+          <h2>Ubicación</h2>
+          <div class="ornament"></div>
+          <p class="lead">
+            En cuanto confirmemos el hotel, aquí encontrarás toda la información
+            necesaria para llegar cómodamente.
+          </p>
+          <a id="mapsButton" class="button button-outline" href="#" aria-disabled="true">
+            Ver en Google Maps
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-rsvp" id="confirmacion">
+        <div class="section-inner reveal">
+          <p class="section-kicker">Nos hará mucha ilusión contar contigo</p>
+          <h2>Confirma tu asistencia</h2>
+          <div class="ornament ornament-light"></div>
+          <p class="lead lead-light">
+            Cuando el formulario esté disponible podrás confirmar desde aquí
+            quiénes asistiréis y cualquier detalle importante.
+          </p>
+          <a id="rsvpButton" class="button button-light" href="#" aria-disabled="true">
+            Confirmar asistencia
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-cream closing">
+        <div class="section-inner reveal">
+          <div class="lemon-medallion" aria-hidden="true">🍋</div>
+          <h2>Os esperamos</h2>
+          <div class="ornament"></div>
+          <p class="lead">Gracias por formar parte de nuestra historia.</p>
+          <p class="signature">Laura &amp; Juan</p>
+        </div>
+      </section>
+
+      <footer>
+        Laura &amp; Juan · 28.08.2027
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
