@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Laura y Juan//Invitacion de boda//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boda-laura-juan-20270828@invitacion
+DTSTAMP:20260728T190000Z
+DTSTART;VALUE=DATE:20270828
+DTEND;VALUE=DATE:20270829
+SUMMARY:Boda de Laura & Juan
+LOCATION:Fairplay Golf & Spa Resort\, Calle La Torre 80\, 11190 Benalup-Casas Viejas\, Cádiz
+DESCRIPTION:Celebración de la boda de Laura y Juan en Fairplay Golf & Spa Resort. La hora de la ceremonia se comunicará próximamente.
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

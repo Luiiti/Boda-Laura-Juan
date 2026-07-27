@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#b9dfe7" />
   <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
   <title>Laura & Juan · 28.08.2027</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=1.4.0" />
 </head>
 <body>
   <div class="site-shell">
@@ -78,11 +78,12 @@
           <div class="ornament"></div>
 
           <div class="detail-grid">
-            <article class="detail-card detail-card-wide">
+            <button class="detail-card detail-card-wide date-card" id="calendarCard" type="button" aria-haspopup="dialog" aria-controls="calendarModal">
               <span class="detail-icon">♡</span>
               <h3>Sábado, 28 de agosto de 2027</h3>
               <p>Será un día para recordar</p>
-            </article>
+              <span class="calendar-hint"><span aria-hidden="true">＋</span> Añadir al calendario</span>
+            </button>
 
             <article class="detail-card">
               <span class="detail-icon">◷</span>
@@ -94,8 +95,8 @@
             <article class="detail-card">
               <span class="detail-icon">⌖</span>
               <h3>Celebración</h3>
-              <p>Hotel pendiente de confirmación</p>
-              <span class="pending">Próximamente</span>
+              <p>Fairplay Golf &amp; Spa Resort</p>
+              <a class="detail-link" href="#ubicacion">Ver ubicación</a>
             </article>
           </div>
 
@@ -151,6 +152,14 @@
               <a class="hotel-email" href="mailto:reservas@fairplayresort.es">
                 reservas@fairplayresort.es
               </a>
+
+              <div class="practical-note" aria-label="Información práctica">
+                <span class="practical-note-icon" aria-hidden="true">✦</span>
+                <div>
+                  <span class="hotel-label">Información práctica</span>
+                  <p>La celebración estará pensada exclusivamente para adultos. Gracias por vuestra comprensión.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -199,6 +208,28 @@
     </main>
   </div>
 
-  <script src="script.js"></script>
+
+    <div class="calendar-modal" id="calendarModal" role="dialog" aria-modal="true" aria-labelledby="calendarTitle" hidden>
+      <button class="calendar-backdrop" type="button" data-close-calendar aria-label="Cerrar"></button>
+      <div class="calendar-sheet">
+        <button class="calendar-close" type="button" data-close-calendar aria-label="Cerrar">×</button>
+        <p class="section-kicker">Guarda la fecha</p>
+        <h2 id="calendarTitle">Añadir al calendario</h2>
+        <p class="calendar-copy">Boda de Laura &amp; Juan · 28 de agosto de 2027</p>
+        <div class="calendar-options">
+          <a class="calendar-option" id="googleCalendarLink" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="calendar-option-mark" aria-hidden="true">G</span>
+            <span><strong>Google Calendar</strong><small>Ideal para Android y cuentas de Google</small></span>
+          </a>
+          <a class="calendar-option" href="evento-laura-juan.ics" download>
+            <span class="calendar-option-mark" aria-hidden="true">28</span>
+            <span><strong>Apple, Outlook y otros</strong><small>Descargar evento universal (.ics)</small></span>
+          </a>
+        </div>
+        <p class="calendar-help">En iPhone, abre el archivo descargado y pulsa «Añadir». En otros dispositivos podrás elegir tu aplicación de calendario.</p>
+      </div>
+    </div>
+
+  <script src="script.js?v=1.4.0"></script>
 </body>
 </html>

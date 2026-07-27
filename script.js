@@ -182,3 +182,53 @@ function revealVisibleElements() {
     }
   });
 }
+
+/* =========================================================
+   V1.4 · AÑADIR AL CALENDARIO
+   ========================================================= */
+const calendarCard = document.getElementById("calendarCard");
+const calendarModal = document.getElementById("calendarModal");
+const googleCalendarLink = document.getElementById("googleCalendarLink");
+const calendarCloseButtons = document.querySelectorAll("[data-close-calendar]");
+
+const googleCalendarUrl = new URL("https://calendar.google.com/calendar/render");
+googleCalendarUrl.searchParams.set("action", "TEMPLATE");
+googleCalendarUrl.searchParams.set("text", "Boda de Laura & Juan");
+googleCalendarUrl.searchParams.set("dates", "20270828/20270829");
+googleCalendarUrl.searchParams.set(
+  "details",
+  "Celebración de la boda de Laura y Juan. La hora de la ceremonia se comunicará próximamente."
+);
+googleCalendarUrl.searchParams.set(
+  "location",
+  "Fairplay Golf & Spa Resort, Calle La Torre 80, 11190 Benalup-Casas Viejas, Cádiz"
+);
+googleCalendarLink.href = googleCalendarUrl.toString();
+
+function openCalendarModal() {
+  calendarModal.hidden = false;
+  document.body.classList.add("modal-open");
+  requestAnimationFrame(() => calendarModal.classList.add("visible"));
+  window.setTimeout(() => {
+    const closeButton = calendarModal.querySelector(".calendar-close");
+    if (closeButton) closeButton.focus();
+  }, 180);
+}
+
+function closeCalendarModal() {
+  calendarModal.classList.remove("visible");
+  document.body.classList.remove("modal-open");
+  window.setTimeout(() => {
+    calendarModal.hidden = true;
+    if (calendarCard) calendarCard.focus();
+  }, 260);
+}
+
+calendarCard?.addEventListener("click", openCalendarModal);
+calendarCloseButtons.forEach(button => button.addEventListener("click", closeCalendarModal));
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && calendarModal && !calendarModal.hidden) {
+    closeCalendarModal();
+  }
+});
