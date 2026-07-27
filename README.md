@@ -59,3 +59,10 @@ La música comienza al tocar el sello, lo que permite su reproducción en iPhone
 Después aparece un control flotante para pausarla o reanudarla.
 
 Para cambiarla, sustituye ese MP3 por otro archivo con exactamente el mismo nombre.
+
+
+## Versión 1.1
+
+- Eliminado el texto sobre el inicio de la música.
+- Eliminada la indicación «Pulsa el sello para abrir».
+- El sello ahora llama la atención mediante un movimiento sutil, brillo y ondas concéntricas.

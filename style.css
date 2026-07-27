@@ -141,19 +141,6 @@ button{font:inherit}
   font-weight:600;
   letter-spacing:.16em;
 }
-.open-label{
-  position:absolute;
-  bottom:42px;
-  width:100%;
-  text-align:center;
-  margin:0;
-  color:var(--leaf-dark);
-  font-family:Montserrat,Arial,sans-serif;
-  font-size:.68rem;
-  font-weight:600;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-}
 
 /* INVITACIÓN */
 .invitation{display:none}
@@ -453,16 +440,6 @@ footer{
 
 
 /* CONTROL DE MÚSICA */
-.open-label small{
-  display:inline-block;
-  margin-top:8px;
-  font-family:"Cormorant Garamond",Georgia,serif;
-  font-size:.88rem;
-  font-weight:400;
-  letter-spacing:.04em;
-  text-transform:none;
-  opacity:.78;
-}
 .music-control{
   position:fixed;
   z-index:100;
@@ -511,4 +488,104 @@ footer{
 @keyframes musicBar{
   from{transform:scaleY(.45)}
   to{transform:scaleY(1)}
+}
+
+
+/* V1.1 · EL SELLO INVITA A PULSAR SIN TEXTO EXPLICATIVO */
+.seal-call{
+  position:absolute;
+  left:50%;
+  top:48%;
+  width:138px;
+  height:138px;
+  transform:translate(-50%,-50%);
+  z-index:1;
+  pointer-events:none;
+}
+.seal-call span{
+  position:absolute;
+  inset:-7px;
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:50%;
+  opacity:0;
+  animation:sealRipple 2.8s ease-out infinite;
+}
+.seal-call span:nth-child(2){
+  animation-delay:1.35s;
+}
+.wax-seal{
+  animation:sealAttention 2.8s ease-in-out infinite;
+  transform-origin:center;
+}
+.wax-seal::after{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border-radius:50%;
+  background:linear-gradient(
+    115deg,
+    transparent 26%,
+    rgba(255,255,255,.55) 43%,
+    transparent 58%
+  );
+  transform:translateX(-135%) rotate(8deg);
+  animation:sealShine 4.6s ease-in-out infinite;
+  pointer-events:none;
+}
+.wax-seal:hover,
+.wax-seal:active{
+  animation:none;
+}
+@keyframes sealAttention{
+  0%,100%{
+    transform:translate(-50%,-50%) scale(1) rotate(0deg);
+    box-shadow:0 14px 28px rgba(90,57,8,.33);
+  }
+  18%{
+    transform:translate(-50%,-50%) scale(1.045) rotate(-1.6deg);
+    box-shadow:0 18px 34px rgba(90,57,8,.40);
+  }
+  34%{
+    transform:translate(-50%,-50%) scale(1.02) rotate(1.25deg);
+  }
+  52%{
+    transform:translate(-50%,-50%) scale(1.05) rotate(-.7deg);
+    box-shadow:0 20px 38px rgba(90,57,8,.42);
+  }
+  70%{
+    transform:translate(-50%,-50%) scale(1) rotate(0deg);
+  }
+}
+@keyframes sealRipple{
+  0%{
+    transform:scale(.92);
+    opacity:0;
+  }
+  16%{
+    opacity:.58;
+  }
+  70%,100%{
+    transform:scale(1.48);
+    opacity:0;
+  }
+}
+@keyframes sealShine{
+  0%,58%{
+    transform:translateX(-135%) rotate(8deg);
+    opacity:0;
+  }
+  66%{
+    opacity:.72;
+  }
+  82%,100%{
+    transform:translateX(135%) rotate(8deg);
+    opacity:0;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .wax-seal,
+  .wax-seal::after,
+  .seal-call span{
+    animation:none!important;
+  }
 }
