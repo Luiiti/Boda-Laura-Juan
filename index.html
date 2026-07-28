@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#b9dfe7" />
   <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
   <title>Laura & Juan · 28.08.2027</title>
-  <link rel="stylesheet" href="style.css?v=1.4.2" />
+  <link rel="stylesheet" href="style.css?v=1.4.2-realista" />
 </head>
 <body>
   <div class="site-shell">
@@ -22,20 +22,26 @@
 
 
     <section class="envelope-screen" id="envelopeScreen" aria-label="Portada de la invitación">
-      <div class="envelope" id="animatedEnvelope">
-        <div class="envelope-back" aria-hidden="true"></div>
-        <div class="invitation-preview" aria-hidden="true">
-          <p>Nos casamos</p>
-          <strong>Laura <em>&amp;</em> Juan</strong>
-          <span>28 · 08 · 2027</span>
+      <div class="envelope-stage" id="animatedEnvelope">
+        <div class="envelope-shadow" aria-hidden="true"></div>
+        <div class="envelope-real">
+          <div class="envelope-back" aria-hidden="true"></div>
+          <div class="invitation-preview" aria-hidden="true">
+            <div class="preview-inner">
+              <p>Nos casamos</p>
+              <strong>Laura <em>&amp;</em> Juan</strong>
+              <span>28 · 08 · 2027</span>
+            </div>
+          </div>
+          <div class="envelope-pocket" aria-hidden="true"></div>
+          <div class="envelope-side envelope-side-left" aria-hidden="true"></div>
+          <div class="envelope-side envelope-side-right" aria-hidden="true"></div>
+          <div class="envelope-flap" aria-hidden="true"></div>
+          <button class="wax-seal" id="openInvitation" aria-label="Abrir invitación">
+            <span class="seal-ring" aria-hidden="true"></span>
+            <span class="seal-monogram">LJ</span>
+          </button>
         </div>
-        <div class="envelope-front" aria-hidden="true"></div>
-        <div class="envelope-flap" aria-hidden="true"></div>
-        <div class="seal-call" aria-hidden="true"><span></span><span></span></div>
-        <button class="wax-seal" id="openInvitation" aria-label="Abrir invitación">
-          <span class="seal-monogram">LJ</span>
-          <span class="seal-date">28 · 08 · 2027</span>
-        </button>
         <p class="open-hint">Pulsa el sello para abrir</p>
       </div>
     </section>
@@ -233,6 +239,6 @@
       </div>
     </div>
 
-  <script src="script.js?v=1.4.2"></script>
+  <script src="script.js?v=1.4.2-realista"></script>
 </body>
 </html>

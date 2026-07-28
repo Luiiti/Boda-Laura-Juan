@@ -1,11 +1,9 @@
-# Laura & Juan · versión 1.4.2
+# Boda Laura & Juan · versión 1.4.2 realista
 
-Nueva portada con sobre de mosaico mediterráneo.
+Revisión de la portada con un sobre mediterráneo de aspecto real:
 
-Cambios principales:
-- Se elimina la cinta amarilla.
-- El mosaico forma el propio sobre.
-- Sello amarillo interactivo con monograma LJ.
-- Al pulsar, el sello se retira, la solapa gira y la tarjeta interior emerge.
-- Después aparece la invitación completa.
-- El diseño y las funciones del interior permanecen como en la versión 1.4.1.
+- Sobre cerrado con solapa, bolsillo y laterales claramente definidos.
+- La tarjeta permanece oculta hasta que se abre la solapa.
+- Sello de cera amarillo con acabado más fino y monograma LJ.
+- Apertura más lenta y natural: presión del sello, giro de la solapa, salida de la tarjeta y transición al interior.
+- Se conserva sin cambios el contenido interior de la invitación.
