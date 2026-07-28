@@ -59,7 +59,7 @@ musicControl.addEventListener("click", async () => {
 });
 
 
-/* APERTURA CINEMATOGRÁFICA DEL SOBRE · v3.0 */
+/* APERTURA CINEMATOGRÁFICA DEL SOBRE · v4.0 */
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
@@ -72,24 +72,23 @@ openInvitation.addEventListener("click", () => {
   startMusic();
 
   envelopeScreen.classList.add("seal-pressed");
-
-  // El papel reacciona antes de que la solapa empiece a levantarse.
   window.setTimeout(() => envelopeScreen.classList.add("flap-opening"), 620);
-
-  // Pausa breve con el interior del sobre ya visible.
-  window.setTimeout(() => envelopeScreen.classList.add("card-rising"), 2300);
-
-  // La tarjeta se presenta antes de entrar en la invitación completa.
-  window.setTimeout(() => envelopeScreen.classList.add("card-presented"), 4550);
-  window.setTimeout(() => envelopeScreen.classList.add("departing"), 5750);
+  window.setTimeout(() => envelopeScreen.classList.add("card-rising"), 2450);
+  window.setTimeout(() => envelopeScreen.classList.add("card-presented"), 4650);
 
   window.setTimeout(() => {
-    envelopeScreen.style.display = "none";
     invitation.classList.add("visible");
     invitation.setAttribute("aria-hidden", "false");
     window.scrollTo({ top: 0, behavior: "auto" });
     revealVisibleElements();
-  }, 6900);
+    envelopeScreen.classList.add("departing");
+  }, 6100);
+
+  window.setTimeout(() => {
+    envelopeScreen.hidden = true;
+    envelopeScreen.style.display = "none";
+    envelopeScreen.setAttribute("aria-hidden", "true");
+  }, 7250);
 });
 
 /* BOTONES */
