@@ -59,28 +59,11 @@ musicControl.addEventListener("click", async () => {
 });
 
 
-/* APERTURA DE LA INVITACIÓN · v1.3.1 */
+/* APERTURA DEL SOBRE · v1.4.2 */
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
-const openingPetals = document.getElementById("openingPetals");
 let isOpening = false;
-
-function createOpeningPetals() {
-  if (!openingPetals) return;
-  openingPetals.innerHTML = "";
-  const types = ["leaf", "flower", "leaf", "flower", "flower", "leaf", "flower"];
-  types.forEach((type, index) => {
-    const piece = document.createElement("i");
-    piece.className = `opening-piece ${type}`;
-    piece.style.setProperty("--x", `${18 + Math.random() * 64}%`);
-    piece.style.setProperty("--drift", `${-62 + Math.random() * 124}px`);
-    piece.style.setProperty("--delay", `${index * 55}ms`);
-    piece.style.setProperty("--turn", `${130 + Math.random() * 260}deg`);
-    openingPetals.appendChild(piece);
-  });
-  requestAnimationFrame(() => openingPetals.classList.add("active"));
-}
 
 openInvitation.addEventListener("click", () => {
   if (isOpening) return;
@@ -88,12 +71,11 @@ openInvitation.addEventListener("click", () => {
   openInvitation.disabled = true;
 
   startMusic();
-  createOpeningPetals();
   envelopeScreen.classList.add("seal-pressed");
 
   window.setTimeout(() => {
     envelopeScreen.classList.add("opening");
-  }, 180);
+  }, 230);
 
   window.setTimeout(() => {
     envelopeScreen.style.display = "none";
@@ -101,7 +83,7 @@ openInvitation.addEventListener("click", () => {
     invitation.setAttribute("aria-hidden", "false");
     window.scrollTo({ top: 0, behavior: "auto" });
     revealVisibleElements();
-  }, 1500);
+  }, 2550);
 });
 
 /* BOTONES */

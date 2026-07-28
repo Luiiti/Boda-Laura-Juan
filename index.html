@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#b9dfe7" />
   <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
   <title>Laura & Juan · 28.08.2027</title>
-  <link rel="stylesheet" href="style.css?v=1.4.1" />
+  <link rel="stylesheet" href="style.css?v=1.4.2" />
 </head>
 <body>
   <div class="site-shell">
@@ -22,19 +22,22 @@
 
 
     <section class="envelope-screen" id="envelopeScreen" aria-label="Portada de la invitación">
-      <div class="envelope">
-        <div class="envelope-pattern" aria-hidden="true"></div>
-        <div class="gold-band"></div>
-        <div class="seal-call" aria-hidden="true">
-          <span></span>
-          <span></span>
+      <div class="envelope" id="animatedEnvelope">
+        <div class="envelope-back" aria-hidden="true"></div>
+        <div class="invitation-preview" aria-hidden="true">
+          <p>Nos casamos</p>
+          <strong>Laura <em>&amp;</em> Juan</strong>
+          <span>28 · 08 · 2027</span>
         </div>
+        <div class="envelope-front" aria-hidden="true"></div>
+        <div class="envelope-flap" aria-hidden="true"></div>
+        <div class="seal-call" aria-hidden="true"><span></span><span></span></div>
         <button class="wax-seal" id="openInvitation" aria-label="Abrir invitación">
-          <span class="seal-names">Laura<br>&amp; Juan</span>
+          <span class="seal-monogram">LJ</span>
           <span class="seal-date">28 · 08 · 2027</span>
         </button>
+        <p class="open-hint">Pulsa el sello para abrir</p>
       </div>
-      <div class="opening-petals" id="openingPetals" aria-hidden="true"></div>
     </section>
 
     <main id="invitation" class="invitation" aria-hidden="true">
@@ -230,6 +233,6 @@
       </div>
     </div>
 
-  <script src="script.js?v=1.4.1"></script>
+  <script src="script.js?v=1.4.2"></script>
 </body>
 </html>
