@@ -1,5 +1,5 @@
-# Boda Laura & Juan · Versión 3.0
+# Recursos gráficos v4.0 — Laura & Juan
 
-Portada editorial reconstruida con sobre mediterráneo texturizado, sello de cera en SVG, tarjeta de algodón y apertura cinematográfica lenta.
+Primera fase del rediseño de portada. Todos los PNG usan transparencia y comparten un lienzo de 1290 × 2796 px.
 
-Se mantiene intacta la estructura interior de la versión 1.4.2: música, calendario, cuenta atrás, hotel e información práctica.
+Incluye fondo, base del sobre, bolsillo, caras exterior e interior de la solapa, invitación, sello y sombras independientes.

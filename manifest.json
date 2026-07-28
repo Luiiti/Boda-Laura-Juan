@@ -1,0 +1,23 @@
+{
+  "version": "4.0-resources-01",
+  "canvas": {
+    "width": 1290,
+    "height": 2796
+  },
+  "layers": [
+    "fondo-textura.webp",
+    "sombra-sobre.png",
+    "sobre-base.png",
+    "invitacion.png",
+    "solapa-interior.png",
+    "bolsillo-frontal.png",
+    "solapa-exterior.png",
+    "sombra-sello.png",
+    "sello-cera.png"
+  ],
+  "implementation_notes": [
+    "Sello y solapa deben compartir el mismo contenedor 3D.",
+    "La invitación debe pasar por delante de la solapa al emerger.",
+    "Todos los PNG comparten lienzo 1290x2796."
+  ]
+}
