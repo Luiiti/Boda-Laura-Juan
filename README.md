@@ -1,13 +1,15 @@
-# Invitación Laura & Juan · v1.4
+# Boda Laura & Juan · Versión 1.4.1
 
-Versión basada en la v1.3.1 estable.
+Actualización exclusivamente gráfica de la portada.
 
-## Novedades
-- La tarjeta de la fecha abre un panel para añadir la boda a Google Calendar o descargar un evento universal `.ics`.
-- La celebración ya figura como confirmada en Fairplay Golf & Spa Resort.
-- Se añade de forma discreta, dentro de la información práctica del hotel, que la celebración será exclusivamente para adultos.
-- Se mantiene intacta la composición visual del hotel y la apertura personalizada.
-- Se añade control de versión a CSS y JavaScript para reducir problemas de caché en Safari y GitHub Pages.
+## Cambios
 
-## Publicación
-Copia el contenido de esta carpeta en la raíz del repositorio, haz Commit y Push.
+- Fondo de mosaico mediterráneo con limones, flores y azules inspirado en la imagen de referencia.
+- Lazo en amarillo limón con acabado de satén y volumen.
+- Sello central amarillo limón con texto azul oscuro.
+- Se mantienen la apertura, la música, el calendario, el hotel, la información práctica y toda la estructura de la versión 1.4.
+- El interior de la invitación no ha sido rediseñado todavía.
+
+## Archivo nuevo
+
+`assets/Images/mosaico-portada.webp`
