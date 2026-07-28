@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#b9dfe7" />
   <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
   <title>Laura & Juan · 28.08.2027</title>
-  <link rel="stylesheet" href="style.css?v=1.4.3" />
+  <link rel="stylesheet" href="style.css?v=2.0" />
 </head>
 <body>
   <div class="site-shell">
@@ -21,29 +21,21 @@
     </button>
 
 
-    <section class="envelope-screen" id="envelopeScreen" aria-label="Portada de la invitación">
-      <div class="envelope-stage" id="animatedEnvelope">
-        <div class="envelope-shadow" aria-hidden="true"></div>
-        <div class="envelope-real">
-          <div class="envelope-back" aria-hidden="true"></div>
-          <div class="invitation-preview" aria-hidden="true">
-            <div class="preview-inner">
-              <p>Nos casamos</p>
-              <strong>Laura <em>&amp;</em> Juan</strong>
-              <span>28 · 08 · 2027</span>
-            </div>
-          </div>
-          <div class="envelope-pocket" aria-hidden="true"></div>
-          <div class="envelope-side envelope-side-left" aria-hidden="true"></div>
-          <div class="envelope-side envelope-side-right" aria-hidden="true"></div>
-          <div class="envelope-flap">
-            <button class="wax-seal" id="openInvitation" aria-label="Abrir invitación">
-              <span class="seal-ring" aria-hidden="true"></span>
-              <span class="seal-monogram">LJ</span>
+    <section class="envelope-screen envelope-v2" id="envelopeScreen" aria-label="Portada de la invitación">
+      <div class="cinematic-envelope" id="animatedEnvelope">
+        <div class="ambient-glow" aria-hidden="true"></div>
+        <div class="envelope-object">
+          <img class="layer envelope-back-img" src="assets/Images/envelope-v2/envelope-back.png" alt="" aria-hidden="true">
+          <img class="invitation-card-img" src="assets/Images/envelope-v2/invitation-card.png" alt="Invitación de Laura y Juan">
+          <img class="layer envelope-pocket-img" src="assets/Images/envelope-v2/envelope-pocket.png" alt="" aria-hidden="true">
+          <div class="flap-group">
+            <img class="layer envelope-flap-img" src="assets/Images/envelope-v2/envelope-flap.png" alt="" aria-hidden="true">
+            <button class="wax-seal-v2" id="openInvitation" type="button" aria-label="Abrir invitación">
+              <img src="assets/Images/envelope-v2/wax-seal.png" alt="" aria-hidden="true">
             </button>
           </div>
         </div>
-        <p class="open-hint">Pulsa el sello para abrir</p>
+        <p class="open-hint-v2">Pulsa el sello para abrir</p>
       </div>
     </section>
 
@@ -240,6 +232,6 @@
       </div>
     </div>
 
-  <script src="script.js?v=1.4.2-realista"></script>
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>

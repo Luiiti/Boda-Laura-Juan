@@ -1,7 +1,8 @@
-# Boda Laura & Juan · versión 1.4.3
+# Boda Laura & Juan · versión 2.0
 
-- Sobre de mosaico a pantalla completa.
-- Sello de cera amarillo más realista, unido físicamente a la solapa.
-- Apertura lenta y sutil.
-- La invitación permanece oculta hasta que la solapa se abre y después sale del interior.
-- Se mantiene intacta la estructura y las funciones de la versión 1.4.2.
+Rediseño de la apertura con recursos gráficos por capas:
+- sobre mediterráneo a pantalla completa
+- solapa independiente con sello de cera unido
+- tarjeta oculta hasta la apertura
+- movimiento lento y cinematográfico
+- interior y funcionalidades de la versión 1.4 conservados

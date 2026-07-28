@@ -1682,236 +1682,30 @@ body.modal-open{overflow:hidden}
 }
 
 
-/* =========================================================
-   VERSIÓN 1.4.3 · SOBRE A PANTALLA COMPLETA
-   ========================================================= */
-.envelope-screen{
-  min-height:100svh;
-  height:100svh;
-  padding:0;
-  display:block;
-  overflow:hidden;
-  perspective:2200px;
-  background:#badfe8;
-}
-.envelope-screen::before{
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(9,43,67,.14));
-  z-index:20;
-}
-.envelope-stage{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  aspect-ratio:auto;
-  transform-style:preserve-3d;
-}
-.envelope-shadow{
-  left:4%;right:4%;bottom:-4%;height:12%;
-  opacity:.32;
-  filter:blur(30px);
-}
-.envelope-real{
-  inset:-1px;
-  width:auto;
-  height:auto;
-  animation:envelopeBreath 6.5s ease-in-out infinite;
-  filter:none;
-  transform-style:preserve-3d;
-}
-@keyframes envelopeBreath{
-  0%,100%{transform:scale(1) translateY(0)}
-  50%{transform:scale(1.003) translateY(-2px)}
-}
-.envelope-back{
-  inset:0;
-  border-radius:0;
-  background:
-    linear-gradient(rgba(222,240,244,.10),rgba(222,240,244,.10)),
-    url("assets/Images/mosaico-portada.webp") center/cover no-repeat;
-  box-shadow:inset 0 0 70px rgba(10,51,73,.14);
-  z-index:0;
-}
-.envelope-pocket{
-  inset:auto 0 0;
-  height:58%;
-  border-radius:0;
-  clip-path:polygon(0 0,50% 50%,100% 0,100% 100%,0 100%);
-  background:
-    linear-gradient(160deg,rgba(255,255,255,.05),rgba(8,46,69,.12)),
-    url("assets/Images/mosaico-portada.webp") center 70%/cover no-repeat;
-  box-shadow:inset 0 12px 22px rgba(4,31,49,.18);
-  z-index:7;
-}
-.envelope-side{
-  inset:auto 0 0;
-  height:58%;
-  border-radius:0;
-  background:transparent;
-  z-index:8;
-  pointer-events:none;
-}
-.envelope-side-left{
-  clip-path:polygon(0 0,52% 52%,0 100%);
-  background:linear-gradient(125deg,rgba(255,255,255,.16),rgba(7,42,64,.08));
-}
-.envelope-side-right{
-  clip-path:polygon(100% 0,48% 52%,100% 100%);
-  background:linear-gradient(235deg,rgba(255,255,255,.12),rgba(7,42,64,.10));
-}
-.envelope-flap{
-  position:absolute;
-  inset:0 0 auto;
-  height:58%;
-  border-radius:0;
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:50% 0%;
-  transform:rotateX(0deg) translateZ(5px);
-  transition:transform 2.35s cubic-bezier(.33,.02,.18,1),filter 2.35s ease;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.09),rgba(7,42,63,.08)),
-    url("assets/Images/mosaico-portada.webp") center top/cover no-repeat;
-  box-shadow:0 18px 28px rgba(7,37,57,.22);
-  z-index:12;
-  transform-style:preserve-3d;
-  backface-visibility:visible;
-}
-.envelope-flap::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  clip-path:inherit;
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,28,46,.12));
-  box-shadow:inset 0 -2px 0 rgba(255,255,255,.28);
-  pointer-events:none;
-}
-.invitation-preview{
-  left:7%;right:7%;bottom:6%;top:auto;
-  height:78%;
-  border-radius:18px 18px 8px 8px;
-  opacity:0;
-  transform:translateY(48%) rotate(.25deg) scale(.985);
-  transition:
-    transform 2.55s cubic-bezier(.16,.76,.22,1),
-    opacity .65s ease,
-    box-shadow 2.2s ease;
-  background:
-    radial-gradient(circle at 30% 12%,rgba(255,255,255,.8),transparent 28%),
-    #f7f1e5;
-  box-shadow:0 0 0 rgba(7,38,58,0);
-  z-index:5;
-  overflow:hidden;
-}
-.invitation-preview::before{
-  inset:14px;
-  border:1px solid rgba(205,164,53,.72);
-  border-radius:12px;
-}
-.invitation-preview::after{
-  inset:22px;
-  border:1px solid rgba(24,61,102,.10);
-  border-radius:9px;
-}
-.preview-inner{
-  padding:12% 8% 9%;
-}
-.preview-inner p{font-size:clamp(.68rem,2.5vw,.9rem)}
-.preview-inner strong{font-size:clamp(2.15rem,10vw,4.6rem)}
-.preview-inner span{font-size:clamp(.74rem,3vw,1.05rem)}
-.wax-seal{
-  position:absolute;
-  left:50%;top:100%;
-  width:clamp(92px,24vw,132px);
-  height:clamp(92px,24vw,132px);
-  transform:translate(-50%,-48%) rotate(-2deg) translateZ(18px);
-  border:0;
-  border-radius:48% 52% 46% 54% / 53% 45% 55% 47%;
-  color:#8b5900;
-  background:
-    radial-gradient(circle at 33% 25%,rgba(255,244,155,.95) 0 5%,transparent 18%),
-    radial-gradient(circle at 52% 52%,#e8b421 0 54%,#c98b08 69%,#a96d00 100%);
-  box-shadow:
-    inset 7px 9px 13px rgba(255,239,129,.48),
-    inset -9px -11px 15px rgba(128,73,0,.36),
-    0 8px 2px rgba(91,52,0,.24),
-    0 17px 24px rgba(6,32,49,.34);
-  transition:transform .85s cubic-bezier(.2,.8,.25,1),filter .85s ease;
-  z-index:4;
-  cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
-}
-.wax-seal::before{
-  content:"";
-  position:absolute;
-  inset:7px;
-  border-radius:50% 46% 53% 47% / 48% 54% 46% 52%;
-  border:2px solid rgba(121,73,0,.38);
-  box-shadow:inset 0 0 0 3px rgba(255,229,98,.16);
-}
-.wax-seal::after{
-  inset:-5px;
-  border:0;
-  border-radius:46% 54% 49% 51% / 55% 47% 53% 45%;
-  box-shadow:inset 0 0 0 2px rgba(118,71,0,.22);
-  transform:rotate(11deg);
-}
-.seal-ring{inset:20%;border:1px solid rgba(113,67,0,.38)}
-.seal-monogram{
-  font-size:clamp(1.75rem,6vw,2.7rem);
-  color:rgba(120,73,0,.82);
-  text-shadow:0 1px rgba(255,238,131,.75),0 -1px rgba(104,59,0,.28);
-}
-.open-hint{
-  z-index:16;
-  bottom:4.5%;
-  color:#123c61;
-  font-size:clamp(.58rem,2.4vw,.72rem);
-  text-shadow:0 1px 8px rgba(255,255,255,.95);
-  transition:opacity .7s ease,transform .7s ease;
-}
-.envelope-screen.seal-pressed .wax-seal{
-  transform:translate(-50%,-48%) rotate(-1deg) scale(.94) translateZ(18px);
-  filter:brightness(.96) saturate(1.04);
-}
-.envelope-screen.seal-pressed .open-hint{
-  opacity:0;
-  transform:translateY(8px);
-}
-.envelope-screen.flap-opening .envelope-real{animation:none}
-.envelope-screen.flap-opening .envelope-flap{
-  transform:rotateX(178deg) translateZ(5px);
-  filter:brightness(.82);
-  z-index:3;
-}
-/* El sello está dentro de la solapa y gira físicamente con ella. */
-.envelope-screen.flap-opening .wax-seal{
-  transform:translate(-50%,-48%) rotate(2deg) scale(.98) translateZ(18px);
-}
-.envelope-screen.card-rising .invitation-preview{
-  opacity:1;
-  transform:translateY(-27%) rotate(-.18deg) scale(1);
-  box-shadow:0 24px 45px rgba(7,38,58,.30);
-  z-index:6;
-}
-.envelope-screen.departing .envelope-stage{
-  animation:envelope143Exit 1.35s cubic-bezier(.45,0,.22,1) both;
-}
-@keyframes envelope143Exit{
-  0%{opacity:1;transform:scale(1) translateY(0)}
-  55%{opacity:1;transform:scale(.995) translateY(8px)}
-  100%{opacity:0;transform:scale(.965) translateY(44px)}
-}
-@media (min-width:700px){
-  .invitation-preview{left:22%;right:22%;height:76%}
-  .envelope-flap,.envelope-pocket,.envelope-side{height:62%}
-  .wax-seal{width:124px;height:124px}
-}
-@media (max-width:420px){
-  .invitation-preview{left:6%;right:6%;height:76%;bottom:5%}
-  .preview-inner{padding-top:14%}
-}
-@media (prefers-reduced-motion:reduce){
-  .envelope-real{animation:none}
-  .envelope-flap,.invitation-preview,.wax-seal{transition-duration:.01ms!important}
-  .envelope-screen.departing .envelope-stage{animation-duration:.01ms!important}
-}
+/* ===============================
+   V2.0 · APERTURA CINEMATOGRÁFICA
+   =============================== */
+.envelope-v2{position:fixed;inset:0;z-index:1000;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,#fff9e9 0,#eadfc9 50%,#cbbda4 100%);perspective:1800px}
+.cinematic-envelope{position:relative;width:100vw;height:100svh;display:grid;place-items:center;overflow:hidden}
+.ambient-glow{position:absolute;inset:-15%;background:radial-gradient(circle,rgba(255,255,255,.72),transparent 55%);filter:blur(36px);animation:v2Glow 6s ease-in-out infinite}
+.envelope-object{position:relative;width:min(100vw,850px);height:min(100svh,1133px);transform-style:preserve-3d;filter:drop-shadow(0 30px 34px rgba(33,30,25,.24));animation:v2Float 5.5s ease-in-out infinite}
+.envelope-v2 .layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.envelope-back-img{z-index:1}.envelope-pocket-img{z-index:5}
+.invitation-card-img{position:absolute;z-index:3;left:50%;top:48%;width:72%;height:auto;transform:translate(-50%,-9%) scale(.94);opacity:0;filter:drop-shadow(0 20px 22px rgba(30,30,30,.28));transition:transform 2.4s cubic-bezier(.18,.75,.18,1),opacity .8s ease}
+.flap-group{position:absolute;inset:0;z-index:8;transform-origin:50% 24%;transform-style:preserve-3d;transition:transform 2.15s cubic-bezier(.22,.72,.18,1),filter 1.8s ease}
+.envelope-flap-img{backface-visibility:visible}
+.wax-seal-v2{position:absolute;z-index:10;left:50%;top:47.7%;width:20%;aspect-ratio:1;border:0;padding:0;background:transparent;transform:translate(-50%,-50%);cursor:pointer;filter:drop-shadow(0 10px 8px rgba(68,42,4,.34));transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s ease}
+.wax-seal-v2 img{width:100%;height:100%;object-fit:contain;display:block}
+.wax-seal-v2:active{transform:translate(-50%,-50%) scale(.94)}
+.open-hint-v2{position:absolute;z-index:20;bottom:max(24px,env(safe-area-inset-bottom));margin:0;padding:.75rem 1.2rem;border-radius:999px;background:rgba(255,250,235,.72);backdrop-filter:blur(10px);color:#183d5c;font:600 .65rem/1.2 Montserrat,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 10px 28px rgba(49,45,38,.12);animation:v2Hint 2.8s ease-in-out infinite}
+.envelope-v2.seal-pressed .wax-seal-v2{transform:translate(-50%,-50%) scale(.93) rotate(-1.5deg);filter:drop-shadow(0 5px 5px rgba(68,42,4,.25)) brightness(.97)}
+.envelope-v2.opening .flap-group{transform:rotateX(-176deg);filter:brightness(.86)}
+.envelope-v2.opening .invitation-card-img{opacity:1;transform:translate(-50%,-58%) scale(1) rotate(-.5deg)}
+.envelope-v2.card-reveal .invitation-card-img{transform:translate(-50%,-83%) scale(1.035) rotate(0deg)}
+.envelope-v2.departing .cinematic-envelope{animation:v2Exit 1.5s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes v2Float{0%,100%{transform:translateY(0) rotateX(0)}50%{transform:translateY(-7px) rotateX(.4deg)}}
+@keyframes v2Glow{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes v2Hint{0%,100%{transform:translateY(0);opacity:.82}50%{transform:translateY(-4px);opacity:1}}
+@keyframes v2Exit{0%{opacity:1;transform:scale(1)}45%{opacity:1;transform:scale(1.018)}100%{opacity:0;transform:scale(1.07)}}
+@media(max-width:600px){.envelope-object{width:112vw;height:100svh}.wax-seal-v2{width:22%;top:48%}.invitation-card-img{width:70%;top:49%}.open-hint-v2{font-size:.58rem}}
+@media(prefers-reduced-motion:reduce){.envelope-object,.ambient-glow,.open-hint-v2{animation:none}.flap-group,.invitation-card-img{transition-duration:.01ms!important}}
