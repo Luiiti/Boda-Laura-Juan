@@ -59,7 +59,7 @@ musicControl.addEventListener("click", async () => {
 });
 
 
-/* APERTURA DEL SOBRE · v1.4.2 REALISTA */
+/* APERTURA DEL SOBRE · v1.4.3 */
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
@@ -73,15 +73,20 @@ openInvitation.addEventListener("click", () => {
   startMusic();
   envelopeScreen.classList.add("seal-pressed");
 
-  // El sello cede primero y después se levanta la solapa.
+  // El sello cede con suavidad y permanece unido a la solapa.
   window.setTimeout(() => {
-    envelopeScreen.classList.add("opening");
-  }, 520);
+    envelopeScreen.classList.add("flap-opening");
+  }, 850);
 
-  // Dejamos que la tarjeta salga y permanezca visible antes de retirar la portada.
+  // La tarjeta comienza a salir cuando la solapa ya está completamente abierta.
+  window.setTimeout(() => {
+    envelopeScreen.classList.add("card-rising");
+  }, 3100);
+
+  // Pausa para contemplar la tarjeta antes de entrar en la invitación.
   window.setTimeout(() => {
     envelopeScreen.classList.add("departing");
-  }, 3000);
+  }, 6500);
 
   window.setTimeout(() => {
     envelopeScreen.style.display = "none";
@@ -89,7 +94,7 @@ openInvitation.addEventListener("click", () => {
     invitation.setAttribute("aria-hidden", "false");
     window.scrollTo({ top: 0, behavior: "auto" });
     revealVisibleElements();
-  }, 4200);
+  }, 7900);
 });
 
 /* BOTONES */
