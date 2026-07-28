@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#b9dfe7" />
   <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
   <title>Laura & Juan · 28.08.2027</title>
-  <link rel="stylesheet" href="style.css?v=2.0" />
+  <link rel="stylesheet" href="style.css?v=3.0" />
 </head>
 <body>
   <div class="site-shell">
@@ -21,21 +21,38 @@
     </button>
 
 
-    <section class="envelope-screen envelope-v2" id="envelopeScreen" aria-label="Portada de la invitación">
-      <div class="cinematic-envelope" id="animatedEnvelope">
-        <div class="ambient-glow" aria-hidden="true"></div>
-        <div class="envelope-object">
-          <img class="layer envelope-back-img" src="assets/Images/envelope-v2/envelope-back.png" alt="" aria-hidden="true">
-          <img class="invitation-card-img" src="assets/Images/envelope-v2/invitation-card.png" alt="Invitación de Laura y Juan">
-          <img class="layer envelope-pocket-img" src="assets/Images/envelope-v2/envelope-pocket.png" alt="" aria-hidden="true">
-          <div class="flap-group">
-            <img class="layer envelope-flap-img" src="assets/Images/envelope-v2/envelope-flap.png" alt="" aria-hidden="true">
-            <button class="wax-seal-v2" id="openInvitation" type="button" aria-label="Abrir invitación">
-              <img src="assets/Images/envelope-v2/wax-seal.png" alt="" aria-hidden="true">
+    <section class="envelope-screen v3-cover" id="envelopeScreen" aria-label="Portada de la invitación">
+      <div class="v3-ambient" aria-hidden="true"></div>
+      <div class="v3-stage" id="animatedEnvelope">
+        <div class="v3-cast-shadow" aria-hidden="true"></div>
+        <div class="v3-envelope" aria-label="Sobre de boda cerrado">
+          <div class="v3-envelope-back" aria-hidden="true"></div>
+
+          <article class="v3-card" aria-hidden="true">
+            <div class="v3-card-border">
+              <p class="v3-card-kicker">Nos casamos</p>
+              <h2>Laura <em>&amp;</em> Juan</h2>
+              <div class="v3-card-rule"><span>❦</span></div>
+              <p class="v3-card-date">28 · 08 · 2027</p>
+              <small>Fairplay Golf &amp; Spa Resort</small>
+            </div>
+          </article>
+
+          <div class="v3-pocket" aria-hidden="true">
+            <div class="v3-pocket-left"></div>
+            <div class="v3-pocket-right"></div>
+            <div class="v3-pocket-front"></div>
+          </div>
+
+          <div class="v3-flap" aria-hidden="true">
+            <div class="v3-flap-face"></div>
+            <button class="v3-wax-seal" id="openInvitation" type="button" aria-label="Abrir invitación">
+              <img src="assets/Images/sello-cera-v3.svg" alt="" aria-hidden="true">
+              <span>LJ</span>
             </button>
           </div>
         </div>
-        <p class="open-hint-v2">Pulsa el sello para abrir</p>
+        <p class="v3-open-hint"><span></span>Pulsa el sello para abrir<span></span></p>
       </div>
     </section>
 
@@ -232,6 +249,6 @@
       </div>
     </div>
 
-  <script src="script.js?v=2.0"></script>
+  <script src="script.js?v=1.4.2-realista"></script>
 </body>
 </html>
