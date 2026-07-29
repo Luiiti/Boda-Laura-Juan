@@ -61,6 +61,7 @@ musicControl.addEventListener("click", async () => {
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
+const doorVideoAmpersand = document.getElementById("doorVideoAmpersand");
 const coverVideo = document.createElement("video");
 let isOpening = false;
 let invitationShown = false;
@@ -75,6 +76,10 @@ coverVideo.playsInline = true;
 coverVideo.disablePictureInPicture = true;
 coverVideo.setAttribute("aria-hidden", "true");
 envelopeScreen.prepend(coverVideo);
+
+coverVideo.addEventListener("timeupdate", () => {
+  doorVideoAmpersand.classList.toggle("visible", coverVideo.currentTime >= 5.9);
+});
 
 function showInvitation() {
   if (invitationShown) return;
@@ -102,6 +107,7 @@ openInvitation.addEventListener("click", () => {
   startMusic();
 
   envelopeScreen.classList.add("video-playing");
+  doorVideoAmpersand.classList.remove("visible");
   coverVideo.currentTime = 0;
 
   const finishFallback = window.setTimeout(showInvitation, 12000);
