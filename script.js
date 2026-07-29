@@ -63,7 +63,33 @@ musicControl.addEventListener("click", async () => {
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
+const coverVideo = document.createElement("video");
 let isOpening = false;
+
+coverVideo.className = "door-video";
+coverVideo.id = "coverVideo";
+coverVideo.src = "assets/portada/puerta-mediterranea.mp4";
+coverVideo.poster = "assets/portada/puerta-mediterranea-poster.jpg";
+coverVideo.preload = "auto";
+coverVideo.muted = true;
+coverVideo.playsInline = true;
+coverVideo.setAttribute("aria-hidden", "true");
+envelopeScreen.prepend(coverVideo);
+envelopeScreen.classList.add("door-cover");
+
+function showInvitation() {
+  invitation.classList.add("visible");
+  invitation.setAttribute("aria-hidden", "false");
+  window.scrollTo({ top: 0, behavior: "auto" });
+  revealVisibleElements();
+  envelopeScreen.classList.add("departing");
+
+  window.setTimeout(() => {
+    envelopeScreen.hidden = true;
+    envelopeScreen.style.display = "none";
+    envelopeScreen.setAttribute("aria-hidden", "true");
+  }, 1050);
+}
 
 openInvitation.addEventListener("click", () => {
   if (isOpening) return;
@@ -71,24 +97,19 @@ openInvitation.addEventListener("click", () => {
   openInvitation.disabled = true;
   startMusic();
 
-  envelopeScreen.classList.add("seal-pressed");
-  window.setTimeout(() => envelopeScreen.classList.add("flap-opening"), 620);
-  window.setTimeout(() => envelopeScreen.classList.add("card-rising"), 2450);
-  window.setTimeout(() => envelopeScreen.classList.add("card-presented"), 4650);
+  envelopeScreen.classList.add("video-playing");
+  coverVideo.currentTime = 0;
 
-  window.setTimeout(() => {
-    invitation.classList.add("visible");
-    invitation.setAttribute("aria-hidden", "false");
-    window.scrollTo({ top: 0, behavior: "auto" });
-    revealVisibleElements();
-    envelopeScreen.classList.add("departing");
-  }, 6100);
+  const finishFallback = window.setTimeout(showInvitation, 10200);
+  coverVideo.addEventListener("ended", () => {
+    window.clearTimeout(finishFallback);
+    showInvitation();
+  }, { once: true });
 
-  window.setTimeout(() => {
-    envelopeScreen.hidden = true;
-    envelopeScreen.style.display = "none";
-    envelopeScreen.setAttribute("aria-hidden", "true");
-  }, 7250);
+  coverVideo.play().catch(() => {
+    window.clearTimeout(finishFallback);
+    window.setTimeout(showInvitation, 900);
+  });
 });
 
 /* BOTONES */

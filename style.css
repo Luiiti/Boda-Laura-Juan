@@ -1870,3 +1870,154 @@ body.modal-open{overflow:hidden}
   }
   .v4-cover.card-presented .v4-card-wrap{transform:translateY(-24%) scale(1.01)}
 }
+
+/* =========================================================
+   PORTADA V5 · PUERTA MEDITERRANEA EN VIDEO
+   ========================================================= */
+.door-cover{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  padding:0!important;
+  background:#eff4ed;
+  transition:opacity 1.05s ease,visibility 1.05s step-end;
+}
+.door-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(15,34,42,.12),transparent 22%,transparent 72%,rgba(14,31,38,.22)),
+    radial-gradient(ellipse at center,transparent 50%,rgba(12,31,40,.20) 100%);
+}
+.door-cover .v4-light,
+.door-cover .v4-layer,
+.door-cover .v4-card-wrap,
+.door-cover .v4-flap-wrap,
+.door-cover .v4-seal-image{
+  display:none!important;
+}
+.door-cover .v4-stage{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  animation:none;
+  transform:none;
+  pointer-events:none;
+}
+.door-video{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  background:#eff4ed url("assets/portada/puerta-mediterranea-poster.jpg") center/cover no-repeat;
+}
+.door-cover .v4-open-button{
+  position:absolute;
+  left:50%;
+  top:48%;
+  z-index:8;
+  width:98px;
+  height:98px;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:50%;
+  cursor:pointer;
+  pointer-events:auto;
+  background:rgba(195,144,29,.92);
+  box-shadow:0 12px 28px rgba(17,35,43,.22),inset 0 1px 0 rgba(255,245,177,.55);
+  -webkit-tap-highlight-color:transparent;
+  transition:opacity .55s ease,transform .55s ease,filter .55s ease;
+}
+.door-cover .v4-open-button::before{
+  content:"LJ";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#6c4a08;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:2rem;
+  letter-spacing:-.08em;
+  text-shadow:0 1px rgba(255,239,150,.72);
+}
+.door-cover .v4-open-button:focus-visible{
+  outline:3px solid rgba(255,255,255,.9);
+  outline-offset:6px;
+}
+.door-cover .v4-open-hint{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:7%;
+  z-index:8;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#fff8e5;
+  font:700 clamp(.62rem,1.5svh,.78rem)/1 Montserrat,Arial,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  text-shadow:0 2px 12px rgba(5,24,34,.65);
+  transition:opacity .55s ease,transform .55s ease;
+}
+.door-cover .v4-open-hint span{
+  width:28px;
+  height:1px;
+  background:currentColor;
+  opacity:.58;
+}
+.door-cover.video-playing .v4-open-button,
+.door-cover.video-playing .v4-open-hint{
+  opacity:0;
+  transform:translateY(10px);
+  pointer-events:none;
+}
+.door-cover.video-playing .v4-open-button{
+  transform:translate(-50%,-46%) scale(.9);
+}
+.door-cover.departing{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+@media (min-aspect-ratio:9/14){
+  .door-video{
+    width:auto;
+    max-width:576px;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:0 0 0 1px rgba(255,255,255,.22),0 24px 70px rgba(14,36,43,.28);
+  }
+  .door-cover{
+    background:linear-gradient(145deg,#dfeadd,#9cc9d2 48%,#f3e7c8);
+  }
+}
+@media (max-width:520px){
+  .door-cover .v4-open-button{
+    top:48%;
+    width:86px;
+    height:86px;
+  }
+  .door-cover .v4-open-button::before{
+    font-size:1.75rem;
+  }
+  .door-cover .v4-open-hint{
+    bottom:6%;
+    font-size:.56rem;
+  }
+}
