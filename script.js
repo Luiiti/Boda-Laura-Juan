@@ -67,7 +67,7 @@ let invitationShown = false;
 
 coverVideo.className = "door-video";
 coverVideo.id = "coverVideo";
-coverVideo.src = "assets/portada/puerta-mediterranea-con-ampersand.mp4";
+coverVideo.src = "assets/portada/puerta-mediterranea-ampersand-suave.mp4";
 coverVideo.poster = "assets/portada/puerta-mediterranea-poster.jpg";
 coverVideo.preload = "auto";
 coverVideo.muted = true;
