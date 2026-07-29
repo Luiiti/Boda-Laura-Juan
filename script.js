@@ -61,14 +61,13 @@ musicControl.addEventListener("click", async () => {
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
-const doorVideoAmpersand = document.getElementById("doorVideoAmpersand");
 const coverVideo = document.createElement("video");
 let isOpening = false;
 let invitationShown = false;
 
 coverVideo.className = "door-video";
 coverVideo.id = "coverVideo";
-coverVideo.src = "assets/portada/puerta-mediterranea.mp4";
+coverVideo.src = "assets/portada/puerta-mediterranea-con-ampersand.mp4";
 coverVideo.poster = "assets/portada/puerta-mediterranea-poster.jpg";
 coverVideo.preload = "auto";
 coverVideo.muted = true;
@@ -76,10 +75,6 @@ coverVideo.playsInline = true;
 coverVideo.disablePictureInPicture = true;
 coverVideo.setAttribute("aria-hidden", "true");
 envelopeScreen.prepend(coverVideo);
-
-coverVideo.addEventListener("timeupdate", () => {
-  doorVideoAmpersand.classList.toggle("visible", coverVideo.currentTime >= 5.9);
-});
 
 function showInvitation() {
   if (invitationShown) return;
@@ -107,7 +102,6 @@ openInvitation.addEventListener("click", () => {
   startMusic();
 
   envelopeScreen.classList.add("video-playing");
-  doorVideoAmpersand.classList.remove("visible");
   coverVideo.currentTime = 0;
 
   const finishFallback = window.setTimeout(showInvitation, 12000);
