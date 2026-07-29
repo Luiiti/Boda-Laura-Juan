@@ -10,7 +10,7 @@ const CONFIG = {
 };
 
 
-/* MÚSICA: comienza al pulsar el sello, permitido por iPhone */
+/* MÚSICA: comienza al pulsar la puerta, permitido por iPhone */
 const backgroundMusic = document.getElementById("backgroundMusic");
 const musicControl = document.getElementById("musicControl");
 const musicLabel = document.getElementById("musicLabel");
@@ -20,7 +20,6 @@ backgroundMusic.volume = 0;
 async function startMusic() {
   try {
     await backgroundMusic.play();
-    musicControl.hidden = false;
     musicControl.classList.remove("paused");
     musicControl.setAttribute("aria-label", "Pausar música");
     musicLabel.textContent = "Música";
@@ -36,7 +35,6 @@ async function startMusic() {
     }, 100);
   } catch (error) {
     // Algunos navegadores pueden pedir un segundo toque.
-    musicControl.hidden = false;
     musicControl.classList.add("paused");
     musicControl.setAttribute("aria-label", "Reproducir música");
     musicLabel.textContent = "Reproducir";
@@ -59,12 +57,13 @@ musicControl.addEventListener("click", async () => {
 });
 
 
-/* APERTURA CINEMATOGRÁFICA DEL SOBRE · v4.0 */
+/* APERTURA CINEMATOGRÁFICA DE LA PUERTA */
 const envelopeScreen = document.getElementById("envelopeScreen");
 const invitation = document.getElementById("invitation");
 const openInvitation = document.getElementById("openInvitation");
 const coverVideo = document.createElement("video");
 let isOpening = false;
+let invitationShown = false;
 
 coverVideo.className = "door-video";
 coverVideo.id = "coverVideo";
@@ -73,13 +72,17 @@ coverVideo.poster = "assets/portada/puerta-mediterranea-poster.jpg";
 coverVideo.preload = "auto";
 coverVideo.muted = true;
 coverVideo.playsInline = true;
+coverVideo.disablePictureInPicture = true;
 coverVideo.setAttribute("aria-hidden", "true");
 envelopeScreen.prepend(coverVideo);
-envelopeScreen.classList.add("door-cover");
 
 function showInvitation() {
+  if (invitationShown) return;
+  invitationShown = true;
+
   invitation.classList.add("visible");
   invitation.setAttribute("aria-hidden", "false");
+  musicControl.hidden = false;
   window.scrollTo({ top: 0, behavior: "auto" });
   revealVisibleElements();
   envelopeScreen.classList.add("departing");
@@ -95,12 +98,13 @@ openInvitation.addEventListener("click", () => {
   if (isOpening) return;
   isOpening = true;
   openInvitation.disabled = true;
+  envelopeScreen.setAttribute("aria-busy", "true");
   startMusic();
 
   envelopeScreen.classList.add("video-playing");
   coverVideo.currentTime = 0;
 
-  const finishFallback = window.setTimeout(showInvitation, 10200);
+  const finishFallback = window.setTimeout(showInvitation, 12000);
   coverVideo.addEventListener("ended", () => {
     window.clearTimeout(finishFallback);
     showInvitation();

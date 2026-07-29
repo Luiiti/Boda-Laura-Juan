@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#b9dfe7" />
   <meta name="description" content="Invitación de boda de Laura y Juan · 28 de agosto de 2027" />
   <title>Laura & Juan · 28.08.2027</title>
-  <link rel="stylesheet" href="style.css?v=5.0.0" />
+  <link rel="stylesheet" href="style.css?v=6.0.0" />
 </head>
 <body>
   <div class="site-shell">
@@ -21,29 +21,10 @@
     </button>
 
 
-    <section class="envelope-screen v4-cover" id="envelopeScreen" aria-label="Portada de la invitación">
-      <div class="v4-light" aria-hidden="true"></div>
-      <div class="v4-stage" id="animatedEnvelope">
-        <img class="v4-layer v4-bg" src="assets/portada/fondo-textura.webp" alt="" aria-hidden="true">
-        <img class="v4-layer v4-envelope-shadow" src="assets/portada/sombra-sobre.png" alt="" aria-hidden="true">
-        <img class="v4-layer v4-envelope-base" src="assets/portada/sobre-base.png" alt="" aria-hidden="true">
-
-        <div class="v4-card-wrap" aria-hidden="true">
-          <img class="v4-layer v4-card" src="assets/portada/invitacion.png" alt="Invitación de boda de Laura y Juan">
-        </div>
-
-        <img class="v4-layer v4-pocket" src="assets/portada/bolsillo-frontal.png" alt="" aria-hidden="true">
-
-        <div class="v4-flap-wrap" aria-hidden="true">
-          <img class="v4-layer v4-flap-inner" src="assets/portada/solapa-interior.png" alt="">
-          <img class="v4-layer v4-flap-outer" src="assets/portada/solapa-exterior.png" alt="">
-          <img class="v4-layer v4-seal-shadow" src="assets/portada/sombra-sello.png" alt="">
-          <img class="v4-seal-image" src="assets/portada/sello-cera.png" alt="">
-        </div>
-
-        <button class="v4-open-button" id="openInvitation" type="button" aria-label="Abrir invitación"></button>
-        <p class="v4-open-hint"><span></span>Pulsa el sello para abrir<span></span></p>
-      </div>
+    <section class="envelope-screen door-cover" id="envelopeScreen" aria-label="Portada de la invitación">
+      <button class="door-open-trigger" id="openInvitation" type="button" aria-label="Abrir la invitación">
+        <span>Abrir la invitación</span>
+      </button>
     </section>
 
     <main id="invitation" class="invitation" aria-hidden="true">
@@ -239,6 +220,6 @@
       </div>
     </div>
 
-  <script src="script.js?v=5.0.0"></script>
+  <script src="script.js?v=6.0.0"></script>
 </body>
 </html>
