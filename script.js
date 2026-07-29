@@ -6,7 +6,7 @@
 const CONFIG = {
   weddingDate: "2027-08-28T18:00:00+02:00",
   mapsUrl: "https://www.google.com/maps/place/36%C2%B020%2705.7%22N+5%C2%B049%2707.6%22W/@36.33491,-5.818775,17z/data=!4m4!3m3!8m2!3d36.3349167!4d-5.8187778",
-  rsvpUrl: ""
+  rsvpUrl: "https://docs.google.com/forms/d/e/1FAIpQLScIDytcIiMOK1w4FpUZo5vvgygUTQyqzBW56uSQhYKKoBFVmg/viewform?usp=publish-editor"
 };
 
 
