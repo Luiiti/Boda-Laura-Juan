@@ -67,7 +67,7 @@ let invitationShown = false;
 
 coverVideo.className = "door-video";
 coverVideo.id = "coverVideo";
-coverVideo.src = "assets/portada/puerta-mediterranea-ampersand-suave.mp4";
+coverVideo.src = "assets/portada/puerta-mediterranea-mosaico.mp4";
 coverVideo.poster = "assets/portada/puerta-mediterranea-poster.jpg";
 coverVideo.preload = "auto";
 coverVideo.muted = true;
@@ -83,15 +83,25 @@ function showInvitation() {
   invitation.classList.add("visible");
   invitation.setAttribute("aria-hidden", "false");
   musicControl.hidden = false;
+  musicControl.classList.add("stage-hidden");
   window.scrollTo({ top: 0, behavior: "auto" });
   revealVisibleElements();
   envelopeScreen.classList.add("departing");
 
   window.setTimeout(() => {
+    invitation.classList.add("decorations-visible");
+    musicControl.classList.remove("stage-hidden");
+  }, 620);
+
+  window.setTimeout(() => {
+    invitation.classList.add("decorations-settled");
+  }, 2250);
+
+  window.setTimeout(() => {
     envelopeScreen.hidden = true;
     envelopeScreen.style.display = "none";
     envelopeScreen.setAttribute("aria-hidden", "true");
-  }, 1050);
+  }, 950);
 }
 
 openInvitation.addEventListener("click", () => {
