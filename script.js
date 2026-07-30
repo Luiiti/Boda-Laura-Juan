@@ -67,7 +67,7 @@ let invitationShown = false;
 
 coverVideo.className = "door-video";
 coverVideo.id = "coverVideo";
-coverVideo.src = "assets/portada/puerta-mediterranea-mosaico-refinado.mp4";
+coverVideo.src = "assets/portada/puerta-mediterranea-mosaico-rotoscopia.mp4";
 coverVideo.poster = "assets/portada/puerta-mediterranea-poster.jpg";
 coverVideo.preload = "auto";
 coverVideo.muted = true;
