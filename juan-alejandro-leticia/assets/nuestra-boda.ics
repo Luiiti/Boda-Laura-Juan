@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Juan Alejandro y Leticia//Nuestra boda//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:juan-alejandro-leticia-20270424@nuestra-boda
+DTSTAMP:20261020T120000Z
+DTSTART:20270424T100000Z
+SUMMARY:Boda de Juan Alejandro y Leticia
+LOCATION:Finca Montenmedio\, Vejer de la Frontera\, Cádiz
+DESCRIPTION:¡Nos casamos! Nos encantará compartir este día contigo.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
