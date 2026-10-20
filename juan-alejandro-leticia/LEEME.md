@@ -18,7 +18,9 @@ El enlace de ubicación se puede ajustar en `mapsUrl`, dentro de `config.js`, si
 
 ## Diseño y recursos
 
-La imagen original «reserva la fecha» se conserva en `assets/save-the-date.jpg`: el dibujo y los nombres se muestran en ventanas SVG sin modificar el archivo original.
+La imagen original «reserva la fecha» se conserva en `assets/save-the-date.jpg` como referencia y tarjeta de vista previa al compartir.
+
+Las manos y la firma se han convertido a curvas SVG nativas, sin fondos de imagen. Al abrir el sobre, un hilo llega desde la izquierda y forma las manos; después se escriben los nombres siguiendo máscaras de trazos curvos. La secuencia dura aproximadamente nueve segundos. Se puede saltar o repetir y respeta la preferencia de movimiento reducido. `story.js` coordina la secuencia; `story.css` define la nueva composición.
 
 La textura `assets/papel-algodon.webp` se creó mediante la herramienta integrada de generación de imágenes y se optimizó para la web. Prompt: «Ultra realistic close-up flat scan of warm ivory white handmade cotton rag paper, fine visible natural fibers, subtle tiny irregularities, soft elegant grain. Full bleed square composition, perfectly flat surface, evenly lit diffuse natural daylight, very light warm white color, nearly uniform tone, tactile premium letterpress stationery. No objects, no envelope, no folds, no text, no illustration, no borders, no dramatic shadows, no gradients, no vignette.»
 

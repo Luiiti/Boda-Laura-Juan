@@ -19,6 +19,7 @@
       invitation.setAttribute('aria-hidden', 'false');
       document.body.classList.remove('envelope-visible');
       document.body.classList.add('invitation-open');
+      window.WeddingStory?.start();
       window.scrollTo({ top: 0, behavior: 'instant' });
       cover.inert = true;
       cover.setAttribute('aria-hidden', 'true');
@@ -31,6 +32,7 @@
   }
   function replayEnvelope() {
     window.clearTimeout(focusTimer);
+    window.WeddingStory?.reset();
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.body.classList.remove('invitation-open');
     document.body.classList.add('envelope-visible');
